@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
@@ -23,15 +23,15 @@ module.exports = function(grunt) {
         },
         concat: {
             build: {
-                src : ['src/header.js','src/**/*.js'],
+                src: ['src/cjsHeader.js', 'src/**/*.js'],
                 dest: 'build/built.js'
             },
             css: {
                 options: {
                     stripBanners: true,
                     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                        '<%= grunt.template.today("yyyy-mm-dd") %> ' +
-                        '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstone */\n'
+                    '<%= grunt.template.today("yyyy-mm-dd") %> ' +
+                    '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstone */\n'
                 },
                 src: ['src/cornerstone.css'],
                 dest: 'dist/cornerstone.css',
@@ -40,10 +40,10 @@ module.exports = function(grunt) {
                 options: {
                     stripBanners: true,
                     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                        '<%= grunt.template.today("yyyy-mm-dd") %> ' +
-                        '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstone */\n'
+                    '<%= grunt.template.today("yyyy-mm-dd") %> ' +
+                    '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstone */\n'
                 },
-                src : ['build/built.js'],
+                src: ['build/built.js'],
                 dest: 'dist/cornerstone.js'
             }
         },
@@ -55,8 +55,8 @@ module.exports = function(grunt) {
             },
             options: {
                 banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                    '<%= grunt.template.today("yyyy-mm-dd") %> ' +
-                    '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstone */\n'
+                '<%= grunt.template.today("yyyy-mm-dd") %> ' +
+                '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstone */\n'
             }
         },
         qunit: {
