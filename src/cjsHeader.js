@@ -3,5 +3,3 @@ var cornerstone = {
   internal: {},
   rendering: {}
 };
-
-module.export = cornerstone;

@@ -23,7 +23,7 @@ module.exports = function (grunt) {
         },
         concat: {
             build: {
-                src: ['src/cjsHeader.js', 'src/**/*.js'],
+                src: ['src/cjsHeader.js', 'src/**/*.js', '!src/footer.js', 'src/footer.js'],
                 dest: 'build/built.js'
             },
             css: {
