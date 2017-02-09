@@ -59,9 +59,6 @@ module.exports = function (grunt) {
                 '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstone */\n'
             }
         },
-        qunit: {
-            all: ['test/**/*.html']
-        },
         jshint: {
             files: [
                 'src/*.js'
@@ -85,17 +82,6 @@ module.exports = function (grunt) {
 
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('buildAll', ['copy', 'concat', 'uglify', 'jshint', 'cssmin', 'qunit']);
+    grunt.registerTask('buildAll', ['copy', 'concat', 'uglify', 'jshint', 'cssmin']);
     grunt.registerTask('default', ['clean', 'buildAll']);
 };
-
-
-// Release process:
-//  1) Update version numbers in package.json and bower.json
-//  2) do a build (needed to update dist versions with correct build number)
-//  3) commit changes
-//      git commit -am "Changes...."
-//  4) tag the commit
-//      git tag -a 0.1.0 -m "Version 0.1.0"
-//  5) push to github
-//      git push origin master --tags
