@@ -47,23 +47,6 @@ module.exports = function (grunt) {
                 dest: 'dist/cornerstone.js'
             }
         },
-        uglify: {
-            dist: {
-                files: {
-                    'dist/cornerstone.min.js': ['dist/cornerstone.js']
-                }
-            },
-            options: {
-                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                '<%= grunt.template.today("yyyy-mm-dd") %> ' +
-                '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstone */\n'
-            }
-        },
-        jshint: {
-            files: [
-                'src/*.js'
-            ]
-        },
         watch: {
             scripts: {
                 files: ['src/**/*.js', 'test/**/*'],
@@ -82,6 +65,6 @@ module.exports = function (grunt) {
 
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('buildAll', ['copy', 'concat', 'uglify', 'jshint', 'cssmin']);
+    grunt.registerTask('buildAll', ['copy', 'concat', 'cssmin']);
     grunt.registerTask('default', ['clean', 'buildAll']);
 };
